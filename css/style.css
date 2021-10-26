@@ -1,0 +1,38 @@
+.text-primary {
+  
+  color: rgba(41,177,221)!important;
+  font-family: cursive;
+  font-weight:600;
+  margin-bottom: 0;
+  padding-top: 10px;
+}
+
+.navbar>.container-fluid {
+    justify-content: center; }
+
+.form-select {padding: 0;}
+
+.card-container {background-color: rgb(221, 221, 221);
+                  height: 100vh;}
+
+.cards { padding:0;}
+                  
+.card-body {padding: 0;}
+
+.card { border-radius: 15px;
+        background-color: rgb(245, 245, 245);
+        font-weight: bold;}
+
+.card-container .card .card-img-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  padding-bottom: 0;
+  font-size: 3rem;
+  
+}
+
+.card.shadow-sm {
+  box-shadow: 1px 1px grey!important;
+}
