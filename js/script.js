@@ -25,21 +25,33 @@ for (let i = 0; i < iconsList.length; i++) {
     const color = coloriIcone[type];
 
     // const color = coloriIcone[oneCard.type];
+    // const color = coloriIcone[iconlist[i].type];
    
-// reo l'HTML 
+// creo l'HTML 
 
-cardContainer.innerHTML +=
+stampaCard(name,prefix,family,color);
+
+    
+}
+
+
+
+
+// funzione esterna per realizzare l'HTML
+
+function stampaCard(arg1, arg2, arg3, arg4) {
+
+    cardContainer.innerHTML +=
 
 `<div class="col">
 <div class="card shadow-sm">
   <div class="card-img-top">
-    <i class="${family} ${prefix}${name}" style="color: ${color}"></i>
+    <i class="${arg3} ${arg2}${arg1}" style="color: ${arg4}"></i>
   </div>
   <div class="card-body">
-    <div class="card-title text-center">${name}</div>
+    <div class="card-title text-center">${arg1}</div>
   </div>
 </div>
 </div>`
-    
-}
 
+}
