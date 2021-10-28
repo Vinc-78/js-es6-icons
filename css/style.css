@@ -33,6 +33,7 @@
   
 }
 
+.row{ align-content: flex-start;}
 .card.shadow-sm {
   box-shadow: 1px 1px grey!important;
 }

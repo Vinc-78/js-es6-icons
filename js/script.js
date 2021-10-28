@@ -40,7 +40,7 @@ function stampaCard(arg1, arg2, arg3, arg4) {
 
     cardContainer.innerHTML +=
 
-        `<div class="col">
+`<div class="col">
 <div class="card shadow-sm">
   <div class="card-img-top">
     <i class="${arg3} ${arg2}${arg1}" style="color: ${arg4}"></i>
@@ -71,15 +71,17 @@ function raggruppoIcone(iconsList) {
         const color = coloriIcone[type]; //passo il colore ( avrei potuto dichiarare entrambi in globale )
 
         if (!gruppoIcone[type]) {
-            gruppoIcone[type] = [];  //se quel tipo/proprietà non c'è lo creo
+             gruppoIcone[type] = [];  //se quel tipo/proprietà non c'è lo creo
         }
+
+        
 
         gruppoIcone[type].push({
             name,
             prefix,
             family,
             color
-        });
+        });                            
         // ho così creato un nuovo oggetto diviso per type e che ha all'interno color
     }
 
@@ -118,7 +120,7 @@ function stampaUnaCategoria(lista) {
     }
 }
 
-console.log(gruppoPerCategoria.user)
+//console.log(gruppoPerCategoria.user)
 
 // /*provo se funziona stampando solo "user"-> */ 
 //stampaUnaCategoria(gruppoPerCategoria.user);
@@ -144,6 +146,7 @@ function stampaTutti(...tutteleCategorie) {
 
 
 //funzione che recupera la lista delle chiavi dell'oggetto gruppoIcone
+//che poi servono per opzioni
 
 function getCategoriaNome(gruppoIcone) {
 
@@ -152,7 +155,7 @@ function getCategoriaNome(gruppoIcone) {
         listaNomi.push( Key);
     }
 
-    console.log(listaNomi);
+    //console.log(listaNomi);
 
     return listaNomi;
 
@@ -181,30 +184,31 @@ function passaLeOpzioni(listaOpzioni) {
   }
 
 
-  // Array delle icone raggruppate
+  // Dall'array di partenza crea l'oggetto di array che ci serve con color
 const gruppodelleIcone = raggruppoIcone(iconsList);
 
-// Lista dei gruppi sotto forma di array di stringhe
+// DA questo estrae le categorie 
 const listaDeiGruppi = getCategoriaNome(gruppodelleIcone)
 
-// genera le options della select
+// che passa ad opzioni in DOM
 passaLeOpzioni(listaDeiGruppi);
 
 
-// Stampa tutti i gruppi disponibili
+// Stampa tutti i gruppi disponibili all'apertura della paggina
 stampaTutti(...listaDeiGruppi)
 
 
-selettore.addEventListener("change", function (e) {
+selettore.addEventListener("change", function (event) {
     
     const value = this.value; // valore scelto
   
-    console.log(value);
+    console.log("la categoria selezionata è ", value);
   
     if (value === "") {
 
       // stampa tutte le categorie 
       stampaTutti(...listaDeiGruppi);
+      
     } else {
 
       // Stampa solo la categoria scelta
