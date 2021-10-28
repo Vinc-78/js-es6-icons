@@ -19,7 +19,9 @@ console.log(iconsList);
 const nuovaIconList = iconsList.map(icon => {
 
 
-  icon["colore"] = 0;
+  let colore = coloriIcone[icon.type];
+
+  /* coloriIcone[icon.type]
 
   for (const key in coloriIcone) {
 
@@ -27,11 +29,11 @@ const nuovaIconList = iconsList.map(icon => {
 
     if (icon.type === key) {
 
-      icon["colore"] = valoreColore;
+      colore = valoreColore;
 
     }
-  }
-  const { name, prefix, type, family, colore } = icon
+  } */
+  const { name, prefix, type, family } = icon
   return { name, prefix, type, family, colore }
 });
 
